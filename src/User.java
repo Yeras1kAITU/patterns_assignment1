@@ -1,11 +1,11 @@
 public class User {
-    private final String username;
-    private final String email;
-    private final String firstName;
-    private final String lastName;
-    private final int age;
-    private final String phoneNumber;
-    private final boolean isActive;
+    private String username;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private int age;
+    private String phoneNumber;
+    private boolean isActive;
 
     private User(UserBuilder builder) {
         this.username = builder.username;
@@ -15,6 +15,34 @@ public class User {
         this.age = builder.age;
         this.phoneNumber = builder.phoneNumber;
         this.isActive = builder.isActive;
+    }
+
+    public void setUsername(String username){
+        this.username = username;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setIsActive(boolean isActive){
+        this.isActive = isActive;
     }
 
     public String getUsername() {
