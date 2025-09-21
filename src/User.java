@@ -75,7 +75,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "User: " +
                 "username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
@@ -83,7 +83,7 @@ public class User {
                 ", age=" + age +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", isActive=" + isActive +
-                '}';
+                ';';
     }
 
     public static class UserBuilder {
