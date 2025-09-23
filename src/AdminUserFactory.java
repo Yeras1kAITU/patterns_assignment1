@@ -1,9 +1,8 @@
 public class AdminUserFactory implements UserFactory {
     @Override
-    public User createUser() {
-        return new User.UserBuilder("admin", "admin@example.com")
-                .firstName("System")
-                .lastName("Administrator")
+    public User createUser(String username, String email) {
+        return new User.UserBuilder(username, email)
+                .role("Admin")
                 .isActive(true)
                 .build();
     }

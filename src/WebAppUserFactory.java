@@ -1,18 +1,24 @@
 public class WebAppUserFactory implements AbstractUserFactory {
-    @Override
-    public User createAdminUser() {
-        return new User.UserBuilder("web_admin", "admin@webapp.com")
-                .firstName("Web")
-                .lastName("Admin")
+    private final String username;
+    private final String email;
+
+    public WebAppUserFactory(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
+
+    public User createAdmin() {
+        return new User.UserBuilder(username, email)
+                .role("Admin")
+                .platform("Web")
                 .isActive(true)
                 .build();
     }
 
-    @Override
-    public User createGuestUser() {
-        return new User.UserBuilder("web_guest", "guest@webapp.com")
-                .firstName("Web")
-                .lastName("Guest")
+    public User createGuest() {
+        return new User.UserBuilder(username, email)
+                .role("Guest")
+                .platform("Web")
                 .isActive(false)
                 .build();
     }

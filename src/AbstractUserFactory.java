@@ -1,4 +1,4 @@
 public interface AbstractUserFactory {
-    User createAdminUser();
-    User createGuestUser();
+    User createAdmin();
+    User createGuest();
 }

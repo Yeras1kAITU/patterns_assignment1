@@ -1,3 +1,3 @@
 public interface UserFactory {
-    User createUser();
+    User createUser(String username, String email);
 }

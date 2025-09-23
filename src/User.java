@@ -6,6 +6,8 @@ public class User {
     private int age;
     private String phoneNumber;
     private boolean isActive;
+    private String role;
+    private String platform;
 
     private User(UserBuilder builder) {
         this.username = builder.username;
@@ -15,6 +17,8 @@ public class User {
         this.age = builder.age;
         this.phoneNumber = builder.phoneNumber;
         this.isActive = builder.isActive;
+        this.role = builder.role;
+        this.platform = builder.platform;
     }
 
     public void setUsername(String username){
@@ -43,6 +47,14 @@ public class User {
 
     public void setIsActive(boolean isActive){
         this.isActive = isActive;
+    }
+
+    public void setRole(String role){
+        this.role = role;
+    }
+
+    public void setPlatform(String platform){
+        this.platform = platform;
     }
 
     public String getUsername() {
@@ -82,7 +94,9 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", isActive=" + isActive +
+                ", isActive=" + isActive + '\'' +
+                ", role=" + role + '\'' +
+                ", platform=" + platform +
                 ';';
     }
 
@@ -94,6 +108,8 @@ public class User {
         private int age;
         private String phoneNumber;
         private boolean isActive;
+        private String role;
+        private String platform;
 
         public UserBuilder(String username, String email) {
             this.username = username;
@@ -122,6 +138,16 @@ public class User {
 
         public UserBuilder isActive(boolean isActive) {
             this.isActive = isActive;
+            return this;
+        }
+
+        public UserBuilder role(String role) {
+            this.role = role;
+            return this;
+        }
+
+        public UserBuilder platform(String platform) {
+            this.platform = platform;
             return this;
         }
 

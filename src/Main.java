@@ -1,31 +1,35 @@
 public class Main {
     public static void main(String[] args) {
+        // Factory Method
         UserFactory adminFactory = new AdminUserFactory();
         UserFactory guestFactory = new GuestUserFactory();
 
-        User systemAdmin = adminFactory.createUser();
-        User systemGuest = guestFactory.createUser();
+        User oleg_sysadmin = adminFactory.createUser("sysadmin_oleg", "olegadmin@myapp.com");
+        User zhalgas_guest = guestFactory.createUser("zhalgas_user", "zhalgas123@site.com");
 
         System.out.println("Factory Method results:");
-        System.out.println(systemAdmin);
-        System.out.println(systemGuest);
+        System.out.println(oleg_sysadmin);
+        System.out.println(zhalgas_guest);
 
-        AbstractUserFactory webUserFactory = new WebAppUserFactory();
-        AbstractUserFactory mobileUserFactory = new MobileAppUserFactory();
+        AbstractUserFactory oleg_mobileFactory = new MobileAppUserFactory("MobileBoss", "boss@mobile.com");
 
-        User webAdminUser = webUserFactory.createAdminUser();
-        User webGuestUser = webUserFactory.createGuestUser();
+        User oleg_mobileAdmin = oleg_mobileFactory.createAdmin();
+        User oleg_mobileGuest = oleg_mobileFactory.createGuest();
 
-        User mobileAdminUser = mobileUserFactory.createAdminUser();
-        User mobileGuestUser = mobileUserFactory.createGuestUser();
+        AbstractUserFactory aiganym_webFactory = new WebAppUserFactory("Web", "boss@mobile.com");
+
+        User aiganym_webAdmin = aiganym_webFactory.createAdmin();
+        User aiganym_webGuest = aiganym_webFactory.createGuest();
+
 
         System.out.println("\nAbstract Factory results:");
-        System.out.println(webAdminUser);
-        System.out.println(webGuestUser);
-        System.out.println(mobileAdminUser);
-        System.out.println(mobileGuestUser);
+        System.out.println(oleg_mobileAdmin);
+        System.out.println(oleg_mobileGuest);
+        System.out.println(aiganym_webAdmin);
+        System.out.println(aiganym_webGuest);
 
-        User customYerassyl = new User.UserBuilder("yeras1k", "yerasyl04@gmail.com")
+        // Builder
+        User yerassyl_user = new User.UserBuilder("yeras1k", "yerasyl04@gmail.com")
                 .firstName("Yerassyl")
                 .lastName("Ibrayev")
                 .age(20)
@@ -34,6 +38,6 @@ public class Main {
                 .build();
 
         System.out.println("\nBuilder result:");
-        System.out.println(customYerassyl);
+        System.out.println(yerassyl_user);
     }
 }

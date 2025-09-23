@@ -1,18 +1,24 @@
 public class MobileAppUserFactory implements AbstractUserFactory {
-    @Override
-    public User createAdminUser() {
-        return new User.UserBuilder("mobile_admin", "admin@mobile.com")
-                .firstName("Mobile")
-                .lastName("Admin")
+    private final String username;
+    private final String email;
+
+    public MobileAppUserFactory(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
+
+    public User createAdmin() {
+        return new User.UserBuilder(username, email)
+                .role("Admin")
+                .platform("Mobile")
                 .isActive(true)
                 .build();
     }
 
-    @Override
-    public User createGuestUser() {
-        return new User.UserBuilder("mobile_guest", "guest@mobile.com")
-                .firstName("Mobile")
-                .lastName("Guest")
+    public User createGuest() {
+        return new User.UserBuilder(username, email)
+                .role("Guest")
+                .platform("Mobile")
                 .isActive(false)
                 .build();
     }
