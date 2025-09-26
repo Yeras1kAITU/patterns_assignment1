@@ -1,7 +1,9 @@
 package factory;
 
-public class GuestUser extends User {
+public class GuestUser extends AbstractUser {
     public GuestUser(String username, String email) {
-        super(username, email, "Guest");
+        super(username, email);
+        setRole("Guest");
     }
 }
+

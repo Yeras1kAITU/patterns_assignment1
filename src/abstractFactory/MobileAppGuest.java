@@ -1,7 +1,10 @@
 package abstractFactory;
 
-public class MobileAppGuest extends AppUser {
+public class MobileAppGuest extends AbstractAppUser {
     public MobileAppGuest(String username, String email) {
-        super(username, email, "Guest", "MobileApp");
+        super(username, email);
+        setRole("Guest");
+        setPlatform("MobileApp");
     }
 }
+

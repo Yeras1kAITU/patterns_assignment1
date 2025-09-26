@@ -6,3 +6,4 @@ public class AdminUserFactory implements UserFactory {
         return new AdminUser(username, email);
     }
 }
+

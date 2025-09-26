@@ -6,3 +6,4 @@ public class GuestUserFactory implements UserFactory {
         return new GuestUser(username, email);
     }
 }
+

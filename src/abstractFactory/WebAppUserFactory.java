@@ -11,3 +11,5 @@ public class WebAppUserFactory implements AppUserFactory {
         return new WebAppGuest(username, email);
     }
 }
+
+

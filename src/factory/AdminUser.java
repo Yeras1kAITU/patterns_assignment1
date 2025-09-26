@@ -1,7 +1,10 @@
 package factory;
 
-public class AdminUser extends User {
+public class AdminUser extends AbstractUser {
     public AdminUser(String username, String email) {
-        super(username, email, "Admin");
+        super(username, email);
+        setRole("Admin");
     }
 }
+
+
