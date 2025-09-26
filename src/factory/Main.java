@@ -5,10 +5,10 @@ public class Main {
         UserFactory adminFactory = new AdminUserFactory();
         UserFactory guestFactory = new GuestUserFactory();
 
-        User admin = adminFactory.createUser("adminUser", "admin@mail.com");
-        User guest = guestFactory.createUser("guestUser", "guest@mail.com");
+        User oleg_admin = adminFactory.createUser("OlegAdmin", "admin@mail.com");
+        User aiganym_guest = guestFactory.createUser("AiganymGuest", "guest@mail.com");
 
-        System.out.println(admin);
-        System.out.println(guest);
+        System.out.println(oleg_admin);
+        System.out.println(aiganym_guest);
     }
 }
